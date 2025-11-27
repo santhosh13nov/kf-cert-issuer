@@ -3,3 +3,27 @@ service:
   identifier: macservice
   orgIdentifier: default
   projectIdentifier: Wipro
+  serviceDefinition:
+    spec:
+      manifests:
+        - manifest:
+            identifier: kf
+            type: HelmChart
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: santhu13novgithub
+                  gitFetchType: Branch
+                  folderPath: /
+                  repoName: kf-cert-issuer
+                  branch: main
+              subChartPath: ""
+              valuesPaths:
+                - /
+              optionalValuesYaml: false
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+              helmVersion: V3
+              fetchHelmChartMetadata: false
+    type: NativeHelm
