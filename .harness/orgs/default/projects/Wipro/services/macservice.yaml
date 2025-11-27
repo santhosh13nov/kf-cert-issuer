@@ -7,7 +7,7 @@ service:
     spec:
       manifests:
         - manifest:
-            identifier: kf
+            identifier: helm
             type: HelmChart
             spec:
               store:
@@ -15,12 +15,12 @@ service:
                 spec:
                   connectorRef: santhu13novgithub
                   gitFetchType: Branch
-                  folderPath: /
+                  folderPath: <+input>
                   repoName: kf-cert-issuer
                   branch: main
               subChartPath: ""
               valuesPaths:
-                - /
+                - values.yaml
               optionalValuesYaml: false
               skipResourceVersioning: false
               enableDeclarativeRollback: false
