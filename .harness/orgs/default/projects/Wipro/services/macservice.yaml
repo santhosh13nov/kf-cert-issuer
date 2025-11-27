@@ -1,0 +1,5 @@
+service:
+  name: mac-service
+  identifier: macservice
+  orgIdentifier: default
+  projectIdentifier: Wipro
