@@ -1,0 +1,15 @@
+apiVersion: v2
+appVersion: v2.4.0
+description: A helm chart to deploy the cert-manager issuer for the Keyfactor Command
+  platform for Certificate Lifecycle Management
+home: https://github.com/Keyfactor/command-cert-manager-issuer
+maintainers:
+- email: 49427552+m8rmclaren@users.noreply.github.com
+  name: Hayden Roszell
+- email: support@keyfactor.com
+  name: Keyfactor Maintainers
+name: command-cert-manager-issuer
+sources:
+- https://github.com/Keyfactor/command-cert-manager-issuer
+type: application
+version: 2.4.0

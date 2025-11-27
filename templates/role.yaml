@@ -1,0 +1,42 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  labels:
+    {{- include "command-cert-manager-issuer.labels" . | nindent 4 }}
+  name: {{ include "command-cert-manager-issuer.name" . }}-leader-election-role
+rules:
+  - apiGroups:
+      - coordination.k8s.io
+    resources:
+      - leases
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - update
+      - patch
+      - delete
+  - apiGroups:
+      - ""
+    resources:
+      - events
+    verbs:
+      - create
+      - patch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: {{ if .Values.secretConfig.useClusterRoleForSecretAccess }}ClusterRole{{ else }}Role{{ end }}
+metadata:
+  labels:
+    {{- include "command-cert-manager-issuer.labels" . | nindent 4 }}
+  name: {{ include "command-cert-manager-issuer.name" . }}-secret-reader-role
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - secrets
+    verbs:
+      - get
+      - list
+      - watch
