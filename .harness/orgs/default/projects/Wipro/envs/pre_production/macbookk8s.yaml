@@ -1,0 +1,6 @@
+environment:
+  name: macbook-k8s
+  identifier: macbookk8s
+  orgIdentifier: default
+  projectIdentifier: Wipro
+  type: PreProduction
