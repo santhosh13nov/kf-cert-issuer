@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: k8s
+  identifier: k8s
+  orgIdentifier: default
+  projectIdentifier: Wipro
+  environmentRef: macbookk8s
+  deploymentType: Kubernetes
+  type: KubernetesDirect
+  spec:
+    connectorRef: macconnector
+    namespace: keyfactor-ns
+    releaseName: release-<+INFRA_KEY_SHORT_ID>
+  allowSimultaneousDeployments: false
