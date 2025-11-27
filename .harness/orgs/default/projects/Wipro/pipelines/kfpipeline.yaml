@@ -14,6 +14,19 @@ pipeline:
           deploymentType: NativeHelm
           service:
             serviceRef: macservice
+            serviceInputs:
+              serviceDefinition:
+                type: NativeHelm
+                spec:
+                  manifests:
+                    - manifest:
+                        identifier: helm
+                        type: HelmChart
+                        spec:
+                          store:
+                            type: Github
+                            spec:
+                              folderPath: <+input>
           environment:
             environmentRef: macbookk8s
             deployToAll: false
