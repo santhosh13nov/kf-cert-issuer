@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: mac123
+  identifier: mac123
+  orgIdentifier: default
+  projectIdentifier: Wipro
+  environmentRef: macbookk8s
+  deploymentType: NativeHelm
+  type: KubernetesDirect
+  spec:
+    connectorRef: macconnector
+    namespace: keyfactor-ns
+    releaseName: release-<+INFRA_KEY_SHORT_ID>
+  allowSimultaneousDeployments: false
